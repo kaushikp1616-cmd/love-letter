@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love ❤️</title>
+    <title>For Pihu ❤️</title>
     <style>
         * {
             margin: 0;
@@ -13,89 +13,234 @@
         
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            font-size: 30px;
+            animation: float 15s infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
         
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s ease-in;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 30px;
+            padding: 60px 50px;
+            max-width: 700px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1.2s ease-in;
+            position: relative;
+            z-index: 2;
+            border: 3px solid rgba(255, 255, 255, 0.5);
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
         
         .heart {
             text-align: center;
-            font-size: 80px;
+            font-size: 100px;
             animation: heartbeat 1.5s infinite;
             margin-bottom: 20px;
+            filter: drop-shadow(0 5px 15px rgba(245, 87, 108, 0.5));
         }
         
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.1); }
-            50% { transform: scale(1); }
+            10% { transform: scale(1.15); }
+            20% { transform: scale(1); }
+            30% { transform: scale(1.15); }
+            40% { transform: scale(1); }
         }
         
         h1 {
-            color: #764ba2;
+            background: linear-gradient(135deg, #f5576c, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #f5576c;
+            font-size: 1.3em;
+            margin-bottom: 35px;
+            font-style: italic;
         }
         
         .message {
             color: #333;
-            line-height: 1.8;
+            line-height: 2;
             font-size: 1.2em;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+        }
+        
+        .shayari-box {
+            background: linear-gradient(135deg, #fff5f7, #ffe5ec);
+            border-left: 5px solid #f5576c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(245, 87, 108, 0.2);
+        }
+        
+        .shayari {
+            font-family: 'Noto Sans Gujarati', 'Georgia', serif;
+            color: #d63447;
+            font-size: 1.4em;
+            line-height: 2.2;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .shayari-divider {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 25px;
         }
         
         .signature {
             text-align: right;
             font-style: italic;
-            color: #667eea;
-            font-size: 1.3em;
+            background: linear-gradient(135deg, #f5576c, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.4em;
             margin-top: 40px;
+            font-weight: bold;
         }
         
         .stars {
             text-align: center;
-            font-size: 30px;
+            font-size: 35px;
+            margin: 25px 0;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+        
+        .rose {
+            text-align: center;
+            font-size: 50px;
             margin: 20px 0;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="floating-hearts">
+        <div class="floating-heart" style="left: 10%; animation-delay: 0s;">💖</div>
+        <div class="floating-heart" style="left: 20%; animation-delay: 2s;">💕</div>
+        <div class="floating-heart" style="left: 30%; animation-delay: 4s;">❤️</div>
+        <div class="floating-heart" style="left: 40%; animation-delay: 1s;">💗</div>
+        <div class="floating-heart" style="left: 50%; animation-delay: 3s;">💝</div>
+        <div class="floating-heart" style="left: 60%; animation-delay: 5s;">💖</div>
+        <div class="floating-heart" style="left: 70%; animation-delay: 2.5s;">💕</div>
+        <div class="floating-heart" style="left: 80%; animation-delay: 4.5s;">❤️</div>
+        <div class="floating-heart" style="left: 90%; animation-delay: 1.5s;">💗</div>
+    </div>
+
     <div class="container">
         <div class="heart">❤️</div>
-        <h1>To My Beautiful Girlfriend</h1>
+        <h1>Pihu</h1>
+        <div class="subtitle">My Everything, My Forever 💕</div>
         
         <div class="message">
-            <p>Every moment with you feels like a dream come true. Your smile brightens my darkest days, and your laughter is my favorite melody.</p>
-            <br>
-            <p>You are the reason I believe in love, the inspiration behind my happiness, and the most precious person in my life.</p>
-            <br>
-            <p>Thank you for being you, for loving me, and for making every day an adventure worth living.</p>
+            <p>તારા વિના આ દુનિયા અધૂરી છે, તારા સાથે જ મારું જીવન પૂરું છે...</p>
         </div>
-        
+
+        <div class="shayari-box">
+            <div class="shayari">
+                તારી આંખોમાં જોઉં છું સપના,<br>
+                તારા હસવાથી ખીલે છે મારા દિવસના.<br>
+                તું છે મારી દુનિયાનું સૌથી સુંદર એહસાસ,<br>
+                પિહુ, તારા વિના અધૂરો છે મારો વિશ્વાસ.
+            </div>
+        </div>
+
+        <div class="rose">🌹</div>
+
+        <div class="shayari-box">
+            <div class="shayari">
+                તારા પ્રેમમાં મળે છે મને સુકૂન,<br>
+                તારી યાદોમાં ખોવાઈ જાઉં છું હું.<br>
+                દરેક પળ તારી સાથે છે ખાસ,<br>
+                પિહુ, તું છે મારા દિલની આસપાસ.
+            </div>
+        </div>
+
+        <div class="shayari-divider">✨ 💫 ✨</div>
+
+        <div class="message">
+            <p>Every moment with you feels like magic. Your smile lights up my world, and your presence makes everything beautiful.</p>
+            <br>
+            <p>You are not just my girlfriend, you are my best friend, my happiness, and my reason to smile every single day.</p>
+            <br>
+            <p>Thank you for being the most amazing person in my life, Pihu. I love you more than words can express.</p>
+        </div>
+
         <div class="stars">✨ 💕 ✨</div>
+
+        <div class="shayari-box">
+            <div class="shayari">
+                તારા વિના અધૂરી છે મારી દુનિયા,<br>
+                તારા સાથે જ પૂરી થાય છે મારી દુઆ.<br>
+                પિહુ, તું છે મારા જીવનનો રંગ,<br>
+                તારા પ્રેમમાં છે મારું સંગ.
+            </div>
+        </div>
+
+        <div class="rose">🌹 💐 🌹</div>
         
         <div class="signature">
-            Forever yours,<br>
-            With all my love 💖
+            Forever and Always,<br>
+            Yours Lovingly 💖<br>
+            With All My Heart ❤️
         </div>
     </div>
 </body>
